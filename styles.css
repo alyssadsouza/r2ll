@@ -82,11 +82,9 @@
   }
 }
 
-body {
-  font-family: 'Open Sans', sans-serif;
-  color: white;
-  background-color: #cd0a5e;
-  margin: 0;
+.fade {
+  -webkit-animation: fade 1s;
+          animation: fade 1s;
 }
 
 body::-webkit-scrollbar {
@@ -100,7 +98,6 @@ body::-webkit-scrollbar-track {
 
 body::-webkit-scrollbar-thumb {
   background-color: #9c0848;
-  border-radius: 20px;
   border: none;
 }
 
@@ -110,6 +107,14 @@ body::-webkit-scrollbar-thumb {
 
 ::selection {
   background-color: #e2798d;
+}
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  color: white;
+  background-color: #cd0a5e;
+  margin: 0;
+  overflow-x: hidden;
 }
 
 h1 {
@@ -127,6 +132,7 @@ h3 {
   letter-spacing: 3px;
   font-size: 20px;
   font-weight: normal;
+  text-transform: uppercase;
 }
 
 header, #stat-container {
@@ -166,6 +172,7 @@ header nav li, footer nav li {
   display: inline-block;
   letter-spacing: 3px;
   font-size: 14px;
+  text-transform: uppercase;
 }
 
 footer nav ul {
@@ -204,6 +211,47 @@ a:hover {
 #current-page {
   color: #eba3b1;
   font-weight: bold;
+}
+
+.banner {
+  width: 100%;
+  height: 400px;
+  position: relative;
+  overflow: hidden;
+}
+
+.banner .banner-img {
+  background-image: url("images/header.jpg");
+  opacity: 50%;
+  width: -webkit-fill-available;
+  height: -webkit-fill-available;
+}
+
+.banner h1 {
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  top: 50%;
+  -webkit-transform: translate(0, -50%);
+          transform: translate(0, -50%);
+  z-index: 1;
+}
+
+.text {
+  text-align: left;
+  padding: 100px;
+}
+
+.yellow {
+  background-color: #fae5a2;
+}
+
+.blue {
+  background-color: #8094dd;
+}
+
+.pink {
+  background-color: #eba3b1;
 }
 
 .home-div {
@@ -269,24 +317,12 @@ a:hover {
           animation: block3 3s;
 }
 
-.yellow {
-  background-color: #fae5a2;
-}
-
-.blue {
-  background-color: #8094dd;
-}
-
-.pink {
-  background-color: #eba3b1;
-}
-
 #statistic {
   position: relative;
   width: -webkit-fill-available;
   height: 500px;
   text-align: center;
-  padding: 0 200px;
+  padding: 0 100px;
   margin: 300px 0;
   background-color: transparent;
   -webkit-box-shadow: none;
@@ -376,28 +412,8 @@ a:hover {
   margin: 0;
 }
 
-.banner {
-  width: 100%;
-  height: 600px;
-  position: relative;
-  overflow: hidden;
-  margin-bottom: 50px;
-}
-
-.banner .banner-img {
-  background-image: url("images/header.jpg");
-  opacity: 50%;
-  width: -webkit-fill-available;
-  height: -webkit-fill-available;
-}
-
-.banner h1 {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
-  z-index: 1;
+#get-involved-now {
+  margin: 100px 0;
 }
 
 #get-involved-btn {
@@ -408,7 +424,77 @@ a:hover {
 #get-involved-btn:hover {
   -webkit-transition: color 0.75s, border-color 0.75s;
   transition: color 0.75s, border-color 0.75s;
-  border-color: #a8b6e8;
-  color: #a8b6e8;
+  border-color: #ffe89d;
+  color: #ffe89d;
+}
+
+#mission {
+  background-image: url("images/header.jpg");
+  width: auto;
+  height: auto;
+}
+
+#mission #mission-text {
+  padding: 100px;
+  width: 400px;
+  text-align: right;
+  position: relative;
+  left: 100%;
+  -webkit-transform: translate(-100%);
+          transform: translate(-100%);
+}
+
+#mission img {
+  position: absolute;
+  right: -1%;
+}
+
+#goals {
+  text-align: center;
+  margin: 100px;
+}
+
+#the-team .exec {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 20% 80%;
+      grid-template-columns: 20% 80%;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: left;
+  background-color: rgba(255, 255, 255, 0.08);
+  margin-bottom: 20px;
+}
+
+#the-team .exec div {
+  padding: 50px;
+}
+
+#the-team .exec #profile {
+  text-align: center;
+  padding-right: 0;
+}
+
+#the-team .exec #profile div {
+  overflow: hidden;
+  max-width: 200px;
+  max-height: 200px;
+  border-radius: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+#the-team .exec img {
+  width: 100%;
+}
+
+#the-team .exec h3 {
+  font-weight: bold;
+  font-size: 24px;
+}
+
+#the-team .exec h4 {
+  color: #fae5a2;
 }
 /*# sourceMappingURL=styles.css.map */

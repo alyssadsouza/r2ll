@@ -1,7 +1,13 @@
+// colours:
+
 $magenta: rgb(205, 10, 94);
 $blue: rgb(128, 148, 221);
 $yellow: rgb(250, 229, 162);
 $pink: rgb(235, 163, 177);
+
+// ---------------------------------
+
+// animations:
 
 @keyframes block1 {
     from {left:-40%;opacity:0%} to {left:10%;opacity:100%;}
@@ -19,12 +25,13 @@ $pink: rgb(235, 163, 177);
     from {opacity:0%} to{opacity:100%}
 }
 
-body {
-    font-family: 'Open Sans', sans-serif;
-    color:white;
-    background-color: $magenta;
-    margin:0;
+.fade {
+    animation: fade 1s;
 }
+
+// ---------------------------------
+
+// scrollbar & highlight:
 
 body::-webkit-scrollbar {
     height: 0px;
@@ -37,12 +44,24 @@ body::-webkit-scrollbar-track {
 
 body::-webkit-scrollbar-thumb {
     background-color: darken($magenta,10%);
-    border-radius: 20px;
+    //border-radius: 20px;
     border: none;
 }
 
 ::selection {
     background-color:darken($pink, 10%);
+}
+
+// ---------------------------------
+
+// general styling:
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    color:white;
+    background-color: $magenta;
+    margin:0;
+    overflow-x: hidden;
 }
 
 h1 {
@@ -60,6 +79,7 @@ h3 {
     letter-spacing: 3px;
     font-size:20px;
     font-weight: normal;
+    text-transform: uppercase;
 }
 
 header, #stat-container {
@@ -89,6 +109,7 @@ header, footer {
             display: inline-block;
             letter-spacing: 3px;
             font-size:14px;
+            text-transform: uppercase;
         }
     }
 }
@@ -129,6 +150,50 @@ a:hover {
     color: $pink;
     font-weight: bold;
 }
+
+.banner {
+    width:100%;
+    height:400px;
+    position:relative;
+    overflow: hidden;
+
+    .banner-img {
+        background-image: url("images/header.jpg");
+        opacity:50%;
+        width: -webkit-fill-available;
+        height: -webkit-fill-available;
+    }
+
+    h1 {
+        position:absolute;
+        width:100%;
+        text-align: center;
+        top:50%;
+        transform: translate(0,-50%);
+        z-index: 1;
+    }
+}
+
+.text {
+    text-align: left;
+    padding:100px;
+}
+
+.yellow {
+    background-color: $yellow;
+}
+
+.blue {
+    background-color: $blue;
+}
+
+.pink {
+    background-color: $pink;
+}
+
+// ---------------------------------
+
+// home page:
 
 .home-div {
     margin: 300px 0;
@@ -187,24 +252,12 @@ a:hover {
     }
 }
 
-.yellow {
-    background-color: $yellow;
-}
-
-.blue {
-    background-color: $blue;
-}
-
-.pink {
-    background-color: $pink;
-}
-
 #statistic {
     position: relative;
     width:-webkit-fill-available;
     height:500px;
     text-align: center;
-    padding: 0 200px;
+    padding: 0 100px;
     margin: 300px 0;
     background-color: transparent;
     box-shadow: none;
@@ -280,29 +333,9 @@ a:hover {
     margin: 0;
 }
 
-.banner {
-    width:100%;
-    height:600px;
-    position:relative;
-    overflow: hidden;
-    margin-bottom: 50px;
-
-    .banner-img {
-        background-image: url("images/header.jpg");
-        opacity:50%;
-        width: -webkit-fill-available;
-        height: -webkit-fill-available;
-    }
-
-    h1 {
-        position:absolute;
-        top:50%;
-        left:50%;
-        transform: translate(-50%,-50%);
-        z-index: 1;
-    }
+#get-involved-now {
+    margin: 100px 0;
 }
-
 #get-involved-btn {
     padding:10px;
     border: 10px solid white;
@@ -310,6 +343,80 @@ a:hover {
 
 #get-involved-btn:hover {
     transition: color 0.75s, border-color 0.75s;
-    border-color: lighten($blue, 10%);
-    color: lighten($blue, 10%);
+    border-color: saturate($yellow, 10%);
+    color: saturate($yellow, 10%);
+}
+
+// ---------------------------------
+
+// about page:
+
+#mission {
+
+    background-image: url("images/header.jpg");
+    width:auto;
+    height:auto;
+
+    #mission-text {
+        padding:100px;
+        width:400px;
+        text-align: right;
+        position: relative;
+        left: 100%;
+        transform: translate(-100%);
+    }
+
+    img {
+        position:absolute;
+        right:-1%;
+    }
+
+}
+
+#goals {
+    text-align: center;
+    margin:100px;
+}
+
+#the-team {
+    .exec {
+        display:grid;
+        grid-template-columns: 20% 80%;
+        align-items: center;
+        text-align: left;
+        background-color: rgba(256,256,256,0.08);
+        margin-bottom: 20px;
+
+        div {
+            padding:50px;
+        }
+
+        #profile {
+            text-align: center;
+            padding-right: 0;
+
+            div {
+                overflow: hidden;
+                max-width:200px;
+                max-height:200px;
+                border-radius: 100%;
+                padding:0;
+                margin:0;
+            }
+        }
+
+        img {
+            width:100%;
+        }
+
+        h3 {
+            font-weight: bold;
+            font-size: 24px;
+        }
+
+        h4 {
+            color: $yellow;
+        }
+        
+    }
 }
