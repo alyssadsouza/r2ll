@@ -189,7 +189,7 @@ header nav li, footer nav li {
 }
 
 .dropdown-content a, .dropdown-content a:visited {
-  color: black;
+  color: #191919;
 }
 
 .dropdown-content a:hover {
@@ -384,7 +384,7 @@ a:hover {
 
 .stat {
   background-color: white;
-  color: black;
+  color: #191919;
   width: 250px;
   height: 250px;
   margin: 20px;

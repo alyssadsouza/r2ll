@@ -4,6 +4,7 @@ $magenta: rgb(205, 10, 94);
 $blue: rgb(128, 148, 221);
 $yellow: rgb(250, 229, 162);
 $pink: rgb(235, 163, 177);
+$black: rgb(25,25,25);
 
 // ---------------------------------
 
@@ -54,7 +55,7 @@ body::-webkit-scrollbar-thumb {
 
 // ---------------------------------
 
-// general styling:
+// general:
 
 body {
     font-family: 'Open Sans', sans-serif;
@@ -126,7 +127,7 @@ header, footer {
     font-size: 14px;
 
     a, a:visited {
-        color:black;
+        color:$black;
     }
 
     a:hover {
@@ -316,7 +317,7 @@ a:hover {
 
 .stat {
     background-color: white;
-    color:black;
+    color:$black;
     width: 250px;
     height: 250px;
     margin:20px;
@@ -393,7 +394,7 @@ a:hover {
         left: 100%;
         transform: translate(-100%);
         background-color: $pink;
-        color: rgb(25,25,25);
+        color: $black;
     }
 
     img {
