@@ -114,6 +114,35 @@ header, footer {
     }
 }
 
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color:lighten($pink, 10%);
+    min-width: 200px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    padding: 0 15px 0 0;
+    z-index: 1;
+    text-align: left;
+    font-size: 14px;
+
+    a, a:visited {
+        color:black;
+    }
+
+    a:hover {
+        color: $pink;
+    }
+
+    li {
+        display: block;
+    }
+} 
+.dropdown:hover {
+    .dropdown-content {
+        display: block;
+    }
+}
+
 footer {
     nav ul {
         vertical-align: middle;
@@ -193,7 +222,7 @@ a:hover {
 
 // ---------------------------------
 
-// home page:
+// home:
 
 .home-div {
     margin: 300px 0;
@@ -342,14 +371,13 @@ a:hover {
 }
 
 #get-involved-btn:hover {
-    transition: color 0.75s, border-color 0.75s;
-    border-color: saturate($yellow, 10%);
-    color: saturate($yellow, 10%);
+    background: linear-gradient(35deg, $blue, $magenta);
+    color: white;
 }
 
 // ---------------------------------
 
-// about page:
+// about us:
 
 #mission {
 
@@ -364,6 +392,8 @@ a:hover {
         position: relative;
         left: 100%;
         transform: translate(-100%);
+        background-color: $pink;
+        color: rgb(25,25,25);
     }
 
     img {
@@ -386,6 +416,7 @@ a:hover {
         text-align: left;
         background-color: rgba(256,256,256,0.08);
         margin-bottom: 20px;
+        font-size: 14px;
 
         div {
             padding:50px;
@@ -420,3 +451,8 @@ a:hover {
         
     }
 }
+
+// ---------------------------------
+
+// our work:
+

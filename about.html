@@ -19,10 +19,34 @@
             </div>
             <nav>
                 <ul>
-                    <li><a href="home.html">Home</a></li>
-                    <li><a href="about.html" id="current-page">About Us</a></li>
-                    <li><a href="#">Our Work</a></li>
-                    <li><a href="#">Get Involved</a></li>
+                    <li class="dropdown">
+                        <a href="home.html">Home</a>
+                        <ul class="dropdown-content">
+                            <li><a href="home.html#the-truth">The Truth</a></li>
+                            <li><a href="home.html#what-can-you-do">What Can You Do</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="about.html" id="current-page">About Us</a>
+                        <ul class="dropdown-content">
+                            <li><a href="about.html#who-are-we">Who Are We</a></li>
+                            <li><a href="about.html#mission">Our Mission</a></li>
+                            <li><a href="about.html#goals">Our Goals</a></li>
+                            <li><a href="about.html#the-team">The Team</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#">Our Work</a>
+                        <ul class="dropdown-content">
+                            <li><a href="home.html#the-truth">The Truth</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#">Get Involved</a>
+                        <ul class="dropdown-content">
+                            <li><a href="home.html#the-truth">The Truth</a></li>
+                        </ul>
+                    </li>
                 </ul>
             </nav>
         </header>
@@ -33,13 +57,13 @@
             <h1 class="fade">About Us</h1>
         </div>
 
-        <div class="text">
+        <div class="text" id="who-are-we">
             <h2>Who Are We?</h2>
             <p>R2L&L is a student-led, non-profit initiative founded with the goal of advocating for the lives and basic rights, primarily education, of women and children around the world who are unjustly deprived of them. </p>
         </div>
 
         <div id="mission">
-            <img src="images/mission.svg">
+            <!-- <img src="images/mission.svg"> -->
             <div id="mission-text">
                 <h2>Our Mission</h2>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
