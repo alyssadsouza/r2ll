@@ -118,7 +118,8 @@ header, footer {
 }
 
 .dropdown-content {
-    display: none;
+    visibility: hidden;
+    opacity:0%;
     position: absolute;
     background-color:lighten($pink, 10%);
     min-width: 200px;
@@ -142,7 +143,9 @@ header, footer {
 } 
 .dropdown:hover {
     .dropdown-content {
-        display: block;
+        transition: opacity 0.4s;
+        visibility: visible;
+        opacity:100%;
     }
 }
 
@@ -326,13 +329,18 @@ a:hover {
     height: 250px;
     margin:20px;
     padding:50px;
-    box-shadow: 5px 10px darken($magenta,10%);
     display:grid;
     grid-template-columns: 30% 70%;
     grid-template-rows: 50% 50%;
     grid-gap: 20px;
     align-items: center;
 
+}
+
+.hover:hover {
+    box-shadow: 5px 10px darken($magenta,10%);
+    transform: translate(0,-5px);
+    transition: box-shadow 0.5s, transform 0.5s;
 }
 
 .stat-img {
@@ -389,7 +397,8 @@ a:hover {
 }
 
 #get-involved-btn:hover {
-    background: linear-gradient(35deg, $blue, $magenta);
+    transition: background-color 0.5s;
+    background-color: darken($blue, 5%);
     color: white;
 }
 
