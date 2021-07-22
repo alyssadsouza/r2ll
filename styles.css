@@ -284,7 +284,7 @@ a:hover {
 }
 
 .home-div {
-  margin: 300px 0;
+  margin: 200px 0;
   text-align: center;
 }
 
@@ -352,23 +352,18 @@ a:hover {
   height: 500px;
   text-align: center;
   padding: 0 100px;
-  margin: 300px 0;
+  margin: 200px 0;
   background-color: transparent;
   -webkit-box-shadow: none;
           box-shadow: none;
   color: white;
-  grid-gap: 50px;
+  grid-gap: 50px 10px;
   -ms-grid-rows: 30% 60%;
       grid-template-rows: 30% 60%;
 }
 
 #statistic h1 {
   font-size: 200px;
-}
-
-#statistic p {
-  font-size: 30px;
-  text-align: left;
 }
 
 #statistic div {
@@ -378,8 +373,16 @@ a:hover {
 }
 
 #statistic .citation {
-  font-size: 24px;
+  font-size: 20px;
   text-align: right;
+}
+
+#statistic-words {
+  text-align: left;
+}
+
+#statistic-words h3 {
+  font-weight: bold;
 }
 
 .stat {
@@ -437,6 +440,19 @@ a:hover {
   text-align: left;
 }
 
+#why-care {
+  padding: 100px 200px;
+  background: linear-gradient(45deg, #8094dd, #f41676);
+}
+
+#why-care div {
+  padding: 50px;
+}
+
+#why-care img {
+  width: 70%;
+}
+
 #what-can-you-do {
   margin: 0;
 }
@@ -453,6 +469,19 @@ a:hover {
 #get-involved-btn:hover {
   background: linear-gradient(35deg, #8094dd, #cd0a5e);
   color: white;
+}
+
+#insta {
+  margin-bottom: 0;
+}
+
+#insta-feed {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 #mission {

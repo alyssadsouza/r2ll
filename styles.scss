@@ -228,7 +228,7 @@ a:hover {
 // home:
 
 .home-div {
-    margin: 300px 0;
+    margin: 200px 0;
     text-align: center;
 }
 
@@ -290,31 +290,33 @@ a:hover {
     height:500px;
     text-align: center;
     padding: 0 100px;
-    margin: 300px 0;
+    margin: 200px 0;
     background-color: transparent;
     box-shadow: none;
     color: white;
-    grid-gap: 50px;
+    grid-gap: 50px 10px;
     grid-template-rows: 30% 60%;
 
     h1 {
         font-size: 200px;
     }
     
-    p {
-        font-size: 30px;
-        text-align: left;
-    }
-
     div {
         height:fit-content;
     }
 
     .citation {
-        font-size: 24px;
+        font-size: 20px;
         text-align: right;
     }
 
+}
+
+#statistic-words {
+    text-align: left;
+    h3 {
+        font-weight: bold;
+    }
 }
 
 .stat {
@@ -361,6 +363,19 @@ a:hover {
         
 }
 
+#why-care {
+    padding:100px 200px;
+    background: linear-gradient(45deg, $blue, lighten($magenta, 10%));
+
+    div {
+        padding:50px;
+    }
+
+    img {
+        width:70%;
+    }
+}
+
 #what-can-you-do {
     margin: 0;
 }
@@ -376,6 +391,15 @@ a:hover {
 #get-involved-btn:hover {
     background: linear-gradient(35deg, $blue, $magenta);
     color: white;
+}
+
+#insta {
+    margin-bottom:0;
+}
+
+#insta-feed {
+    display:flex;
+    justify-content: center;
 }
 
 // ---------------------------------
