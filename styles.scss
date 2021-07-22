@@ -85,9 +85,9 @@ h3 {
     text-transform: uppercase;
 }
 
-header, #stat-container {
+.flex {
     display:flex;
-    flex-wrap: nowrap;
+    //flex-wrap: nowrap;
     align-items: center;
 }
 
@@ -226,6 +226,12 @@ a:hover {
     background-color: $pink;
 }
 
+.hover:hover {
+    box-shadow: 5px 10px darken($magenta,10%);
+    transform: translate(0,-5px);
+    transition: box-shadow 0.5s, transform 0.5s;
+}
+
 // ---------------------------------
 
 // home:
@@ -337,12 +343,6 @@ a:hover {
 
 }
 
-.hover:hover {
-    box-shadow: 5px 10px darken($magenta,10%);
-    transform: translate(0,-5px);
-    transition: box-shadow 0.5s, transform 0.5s;
-}
-
 .stat-img {
     grid-area: 1 / 1 / span 1 / span 2;
     width:inherit;
@@ -403,11 +403,6 @@ a:hover {
     margin-bottom:0;
 }
 
-#insta-feed {
-    display:flex;
-    justify-content: center;
-}
-
 // ---------------------------------
 
 // about us:
@@ -415,8 +410,6 @@ a:hover {
 #mission {
 
     background-color: $pink;
-    display: flex;
-    align-items: center;
 
     #mission-text {
         padding:100px;

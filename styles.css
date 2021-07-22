@@ -135,12 +135,10 @@ h3 {
   text-transform: uppercase;
 }
 
-header, #stat-container {
+.flex {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -ms-flex-wrap: nowrap;
-      flex-wrap: nowrap;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -287,6 +285,17 @@ a:hover {
   background-color: #eba3b1;
 }
 
+.hover:hover {
+  -webkit-box-shadow: 5px 10px #9c0848;
+          box-shadow: 5px 10px #9c0848;
+  -webkit-transform: translate(0, -5px);
+          transform: translate(0, -5px);
+  -webkit-transition: -webkit-box-shadow 0.5s, -webkit-transform 0.5s;
+  transition: -webkit-box-shadow 0.5s, -webkit-transform 0.5s;
+  transition: box-shadow 0.5s, transform 0.5s;
+  transition: box-shadow 0.5s, transform 0.5s, -webkit-box-shadow 0.5s, -webkit-transform 0.5s;
+}
+
 .home-div {
   margin: 200px 0;
   text-align: center;
@@ -408,17 +417,6 @@ a:hover {
           align-items: center;
 }
 
-.hover:hover {
-  -webkit-box-shadow: 5px 10px #9c0848;
-          box-shadow: 5px 10px #9c0848;
-  -webkit-transform: translate(0, -5px);
-          transform: translate(0, -5px);
-  -webkit-transition: -webkit-box-shadow 0.5s, -webkit-transform 0.5s;
-  transition: -webkit-box-shadow 0.5s, -webkit-transform 0.5s;
-  transition: box-shadow 0.5s, transform 0.5s;
-  transition: box-shadow 0.5s, transform 0.5s, -webkit-box-shadow 0.5s, -webkit-transform 0.5s;
-}
-
 .stat-img {
   -ms-grid-row: 1;
   -ms-grid-row-span: 1;
@@ -486,23 +484,8 @@ a:hover {
   margin-bottom: 0;
 }
 
-#insta-feed {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-}
-
 #mission {
   background-color: #eba3b1;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
 }
 
 #mission #mission-text {
