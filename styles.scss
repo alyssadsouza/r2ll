@@ -4,7 +4,9 @@ $magenta: rgb(205, 10, 94);
 $blue: rgb(128, 148, 221);
 $yellow: rgb(250, 229, 162);
 $pink: rgb(235, 163, 177);
-$black: rgb(25,25,25);
+$black: #363636;
+$white: #f3f3f3;
+$beige: #f0e6d8;
 
 // ---------------------------------
 
@@ -316,7 +318,7 @@ a:hover {
 }
 
 .stat {
-    background-color: white;
+    background-color: $white;
     color:$black;
     width: 250px;
     height: 250px;
@@ -382,24 +384,26 @@ a:hover {
 
 #mission {
 
-    background-image: url("images/header.jpg");
-    width:auto;
-    height:auto;
+    background-color: $pink;
+    display: flex;
+    align-items: center;
 
     #mission-text {
         padding:100px;
-        width:400px;
+        width:40%;
         text-align: right;
         position: relative;
-        left: 100%;
-        transform: translate(-100%);
-        background-color: $pink;
         color: $black;
     }
 
+    #mission-img {
+        width:60%;
+        padding:100px;
+    }
+
     img {
-        position:absolute;
-        right:-1%;
+        width:100%;
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     }
 
 }

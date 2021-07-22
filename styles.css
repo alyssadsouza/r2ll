@@ -189,7 +189,7 @@ header nav li, footer nav li {
 }
 
 .dropdown-content a, .dropdown-content a:visited {
-  color: #191919;
+  color: #363636;
 }
 
 .dropdown-content a:hover {
@@ -383,8 +383,8 @@ a:hover {
 }
 
 .stat {
-  background-color: white;
-  color: #191919;
+  background-color: #f3f3f3;
+  color: #363636;
   width: 250px;
   height: 250px;
   margin: 20px;
@@ -456,26 +456,32 @@ a:hover {
 }
 
 #mission {
-  background-image: url("images/header.jpg");
-  width: auto;
-  height: auto;
+  background-color: #eba3b1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 #mission #mission-text {
   padding: 100px;
-  width: 400px;
+  width: 40%;
   text-align: right;
   position: relative;
-  left: 100%;
-  -webkit-transform: translate(-100%);
-          transform: translate(-100%);
-  background-color: #eba3b1;
-  color: #191919;
+  color: #363636;
+}
+
+#mission #mission-img {
+  width: 60%;
+  padding: 100px;
 }
 
 #mission img {
-  position: absolute;
-  right: -1%;
+  width: 100%;
+  -webkit-box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+          box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
 }
 
 #goals {
