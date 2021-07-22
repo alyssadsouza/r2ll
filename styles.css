@@ -527,4 +527,14 @@ a:hover {
 #the-team .exec h4 {
   color: #fae5a2;
 }
+
+#donate-icons {
+  background-color: rgba(160, 11, 75, 0.5);
+  text-align: center;
+}
+
+#donate-icons img {
+  width: 250px;
+  margin: 20px;
+}
 /*# sourceMappingURL=styles.css.map */
