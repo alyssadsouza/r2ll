@@ -80,10 +80,11 @@ h2 {
 
 h3 {
     letter-spacing: 3px;
-    font-size:20px;
+    font-size:16px;
     font-weight: normal;
     text-transform: uppercase;
 }
+
 
 .flex {
     display:flex;
@@ -186,11 +187,25 @@ a:hover {
     font-weight: bold;
 }
 
+.btn {
+    padding:10px;
+    margin:10px;
+    border: 2px solid white;
+    border-radius: 20px;
+    font: 18px "Staatliches", cursive;
+    letter-spacing: 2px;
+}
+
+.btn:hover {
+    border-color: $pink;
+}
+
 .banner {
     width:100%;
     height:400px;
     position:relative;
     overflow: hidden;
+    animation: fade 0.5s;
 
     .banner-img {
         background-image: url("images/header.jpg");
@@ -237,26 +252,25 @@ a:hover {
 // home:
 
 .home-div {
-    margin: 200px 0;
+    margin: 100px 0;
     text-align: center;
 }
 
 #welcome {
+    animation: fade 1s;
     width:100%;
-    height:600px;
+    height:100%;
+    margin: 50px 0;
     position:relative;
     overflow: hidden;
     background-image: url("images/header.jpg");
 
     .container {
         position:relative;
-        top:50%;
-        transform: translate(0,-50%);
     }
     
     .block {
         width:75%;
-        height:110px;
         margin: 20px 0px;
         padding:20px;
         text-align: center;
@@ -264,8 +278,13 @@ a:hover {
         h1, h3 {
             margin:0;
             padding:0;
+        }        
+    }
+
+    .yellow, .pink {
+        h1, h3 {
+            visibility:hidden;
         }
-        
     }
 
     .yellow {
@@ -295,27 +314,36 @@ a:hover {
 
 #statistic {
     position: relative;
-    width:-webkit-fill-available;
-    height:500px;
     text-align: center;
     padding: 0 100px;
-    margin: 200px 0;
+    margin: 100px 0;
     background-color: transparent;
     box-shadow: none;
     color: white;
-    grid-gap: 50px 10px;
-    grid-template-rows: 30% 60%;
+    width: -webkit-fill-available;
+    height:fit-content;
+    flex-wrap: wrap;
+    justify-content: center;
 
     h1 {
-        font-size: 200px;
+        font-size: 15vw;
+        margin:0;
+        width:fit-content;
+        height:fit-content;
     }
     
     div {
         height:fit-content;
+        max-width:800px;
+        margin:20px;
+    }
+
+    h3 {
+        font-size: 24px;
     }
 
     .citation {
-        font-size: 20px;
+        font-size: 16px;
         text-align: right;
     }
 
@@ -331,41 +359,39 @@ a:hover {
 .stat {
     background-color: $white;
     color:$black;
-    width: 250px;
-    height: 250px;
+    max-width: 250px;
+    max-height: 250px;
     margin:20px;
     padding:50px;
-    display:grid;
-    grid-template-columns: 30% 70%;
-    grid-template-rows: 50% 50%;
-    grid-gap: 20px;
     align-items: center;
 
 }
 
-.stat-img {
-    grid-area: 1 / 1 / span 1 / span 2;
-    width:inherit;
-}
-
 #the-truth {
+    padding:50px;
+    background: linear-gradient(45deg, $blue, lighten($magenta, 10%));
     position: relative;
     h2 {
         text-align: center;
-        margin:100px;
+    }
+
+    .stat {
+        flex-wrap: wrap;
+        justify-content: center;
     }
 
     #stat-container {
         text-align: center;
         justify-content: space-evenly;
+        flex-wrap: wrap;
 
         h3 {
             font: 64px 'Staatliches', cursive;
-            margin:0;
+            margin:5px;
         }
 
-        p {
-            text-align: left;
+        .text {
+            margin:0;
         }
     }
         
@@ -373,7 +399,7 @@ a:hover {
 
 #why-care {
     padding:100px 200px;
-    background: linear-gradient(45deg, $blue, lighten($magenta, 10%));
+    
 
     div {
         padding:50px;
@@ -385,7 +411,7 @@ a:hover {
 }
 
 #what-can-you-do {
-    margin: 0;
+    margin-bottom: 200px;
 }
 
 #get-involved-btn {
@@ -429,14 +455,14 @@ a:hover {
 
 #goals {
     text-align: center;
-    margin:100px;
 }
 
 #the-team {
     .exec {
-        display:grid;
-        grid-template-columns: 20% 80%;
+        display:flex;
+        flex-wrap:wrap;
         align-items: center;
+        justify-content: center;
         text-align: left;
         background-color: rgba(256,256,256,0.08);
         margin-bottom: 20px;
@@ -444,20 +470,30 @@ a:hover {
 
         div {
             padding:50px;
+            margin:20px;
         }
 
         #profile {
+            padding:20px;
             text-align: center;
-            padding-right: 0;
+            width:200px;
+            height:200px;
+            vertical-align: middle;
+            overflow:hidden;
+            border-radius: 100%;
 
-            div {
-                overflow: hidden;
-                max-width:200px;
-                max-height:200px;
-                border-radius: 100%;
-                padding:0;
-                margin:0;
+            img {
+                position:relative;
+                left:50%;
+                top:50%;
+                transform: translate(-50%,-50%);
+                height:120%;
+                width:auto;
             }
+        }
+
+        #exec-text {
+            width:60%;
         }
 
         img {
@@ -483,19 +519,50 @@ a:hover {
 
     background-color: $pink;
 
+    h1 {
+        padding: 50px;
+        font-size: 14vw;
+        margin:0;
+        width: fit-content;
+        height:fit-content;
+    }
+
     #showcase-text {
+        align-self: flex-start;
+        flex-wrap: wrap;
         padding:100px;
-        width:40%;
-        text-align: right;
-        position: relative;
+        width:95%;
+        text-align: left;
+        position: relative;  
         color: $black;
     }
 
-    #showcase-img {
-        width:60%;
-        padding:100px;
+    #showcase-img1 {
+        
+        width:45%;
+        padding:0px;
+        position: relative;
+        margin-right:20px;
+        
     }
 
+    #showcase-img2 { 
+        
+        width:45%;
+        padding:0px;
+        position: relative;
+        margin-left:20px;
+        
+    }
+
+    #showcase-date {
+        color: darken($pink, 5%);
+        h1 {
+            padding: 50px 100px;
+        }
+    }
+    
+    
     img {
         width:100%;
         box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
@@ -512,6 +579,7 @@ a:hover {
     text-align: center;
     display:flex;
     justify-content: center;
+    flex-wrap: wrap;
 
     img {
         width:250px;
@@ -539,13 +607,133 @@ a:hover {
         margin: 20px;
 
         border-radius: 100%;
-        height:155px;
-        width:155px;
+        height:150px;
+        width:150px;
         background-color: $black;
 
         h1 {
             font-size: 16px;
+            letter-spacing: 1px;
+        }
+
+        p {
+            font-size: 14px;
         }
         
     }
+}
+
+
+// ---------------------------------
+
+// responsive:
+
+@media screen and (max-width:600px) {
+
+    body {
+        overflow-x:hidden;
+    }
+
+    .home-div {
+        margin: 50px 0;
+        text-align: center;
+    }
+
+    #welcome {
+        .yellow, .pink{
+            background-color: rgba(0,0,0,0);
+        }
+        .blue {
+            background-color: rgba(0,0,0,0.25);
+        }
+    }
+    
+    #why-care, #what-can-you-do, #statistic, #mission {
+        padding:50px;
+    }
+
+    #statistic {
+        width: -webkit-fill-available;
+        height:fit-content;
+        flex-wrap: wrap;
+        justify-content: center;
+
+        #statistic-num h1 {
+            font-size: 72px;
+        }
+    }
+
+    #the-truth {
+        h2 {
+            margin:50px
+        }
+    }
+
+    #why-care div {
+        width:-webkit-fill-available;
+        padding:0;
+    }
+
+    #get-involved-now, #insta {
+        height:200px;
+        margin-bottom: 200px;
+
+        h1 {
+            top:0%;
+            transform:none;
+        }
+
+        #get-involved-btn {
+            font-size: 24px;
+            border-width: 5px;
+        }
+    }
+
+    .text {
+        margin:50px;
+        h2 {
+            font-size:40px;
+        }
+    }
+
+    #mission {
+        flex-wrap:wrap;
+        
+        #mission-text, #mission-img {
+            padding:0;
+            width:fit-content;
+        }
+
+    }
+
+    #the-team {
+        margin:20px;
+
+        h2 {
+            text-align: center;
+        }
+        
+        #exec-text {
+            padding:0;
+
+            h3 {
+                font-size: 20px;
+            }
+        }
+    }
+
+    #showcase {
+        flex-wrap:wrap;
+        padding:50px;
+        
+        #showcase-text, #showcase-img {
+            padding:0;
+        }
+
+        #showcase-img1, #showcase-img2 {
+            width:100%;
+            margin:0;
+        }
+    }
+    
 }

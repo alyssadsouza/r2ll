@@ -130,7 +130,7 @@ h2 {
 
 h3 {
   letter-spacing: 3px;
-  font-size: 20px;
+  font-size: 16px;
   font-weight: normal;
   text-transform: uppercase;
 }
@@ -244,11 +244,26 @@ a:hover {
   font-weight: bold;
 }
 
+.btn {
+  padding: 10px;
+  margin: 10px;
+  border: 2px solid white;
+  border-radius: 20px;
+  font: 18px "Staatliches", cursive;
+  letter-spacing: 2px;
+}
+
+.btn:hover {
+  border-color: #eba3b1;
+}
+
 .banner {
   width: 100%;
   height: 400px;
   position: relative;
   overflow: hidden;
+  -webkit-animation: fade 0.5s;
+          animation: fade 0.5s;
 }
 
 .banner .banner-img {
@@ -297,13 +312,16 @@ a:hover {
 }
 
 .home-div {
-  margin: 200px 0;
+  margin: 100px 0;
   text-align: center;
 }
 
 #welcome {
+  -webkit-animation: fade 1s;
+          animation: fade 1s;
   width: 100%;
-  height: 600px;
+  height: 100%;
+  margin: 50px 0;
   position: relative;
   overflow: hidden;
   background-image: url("images/header.jpg");
@@ -311,14 +329,10 @@ a:hover {
 
 #welcome .container {
   position: relative;
-  top: 50%;
-  -webkit-transform: translate(0, -50%);
-          transform: translate(0, -50%);
 }
 
 #welcome .block {
   width: 75%;
-  height: 110px;
   margin: 20px 0px;
   padding: 20px;
   text-align: center;
@@ -327,6 +341,10 @@ a:hover {
 #welcome .block h1, #welcome .block h3 {
   margin: 0;
   padding: 0;
+}
+
+#welcome .yellow h1, #welcome .yellow h3, #welcome .pink h1, #welcome .pink h3 {
+  visibility: hidden;
 }
 
 #welcome .yellow {
@@ -361,32 +379,49 @@ a:hover {
 
 #statistic {
   position: relative;
-  width: -webkit-fill-available;
-  height: 500px;
   text-align: center;
   padding: 0 100px;
-  margin: 200px 0;
+  margin: 100px 0;
   background-color: transparent;
   -webkit-box-shadow: none;
           box-shadow: none;
   color: white;
-  grid-gap: 50px 10px;
-  -ms-grid-rows: 30% 60%;
-      grid-template-rows: 30% 60%;
+  width: -webkit-fill-available;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 #statistic h1 {
-  font-size: 200px;
+  font-size: 15vw;
+  margin: 0;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
 }
 
 #statistic div {
   height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
+  max-width: 800px;
+  margin: 20px;
+}
+
+#statistic h3 {
+  font-size: 24px;
 }
 
 #statistic .citation {
-  font-size: 20px;
+  font-size: 16px;
   text-align: right;
 }
 
@@ -401,38 +436,31 @@ a:hover {
 .stat {
   background-color: #f3f3f3;
   color: #363636;
-  width: 250px;
-  height: 250px;
+  max-width: 250px;
+  max-height: 250px;
   margin: 20px;
   padding: 50px;
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: 30% 70%;
-      grid-template-columns: 30% 70%;
-  -ms-grid-rows: 50% 50%;
-      grid-template-rows: 50% 50%;
-  grid-gap: 20px;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
 }
 
-.stat-img {
-  -ms-grid-row: 1;
-  -ms-grid-row-span: 1;
-  -ms-grid-column: 1;
-  -ms-grid-column-span: 2;
-  grid-area: 1 / 1 / span 1 / span 2;
-  width: inherit;
-}
-
 #the-truth {
+  padding: 50px;
+  background: linear-gradient(45deg, #8094dd, #f41676);
   position: relative;
 }
 
 #the-truth h2 {
   text-align: center;
-  margin: 100px;
+}
+
+#the-truth .stat {
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 #the-truth #stat-container {
@@ -440,20 +468,21 @@ a:hover {
   -webkit-box-pack: space-evenly;
       -ms-flex-pack: space-evenly;
           justify-content: space-evenly;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
 }
 
 #the-truth #stat-container h3 {
   font: 64px 'Staatliches', cursive;
-  margin: 0;
+  margin: 5px;
 }
 
-#the-truth #stat-container p {
-  text-align: left;
+#the-truth #stat-container .text {
+  margin: 0;
 }
 
 #why-care {
   padding: 100px 200px;
-  background: linear-gradient(45deg, #8094dd, #f41676);
 }
 
 #why-care div {
@@ -465,7 +494,7 @@ a:hover {
 }
 
 #what-can-you-do {
-  margin: 0;
+  margin-bottom: 200px;
 }
 
 #get-involved-btn {
@@ -505,17 +534,20 @@ a:hover {
 
 #goals {
   text-align: center;
-  margin: 100px;
 }
 
 #the-team .exec {
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: 20% 80%;
-      grid-template-columns: 20% 80%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   text-align: left;
   background-color: rgba(255, 255, 255, 0.08);
   margin-bottom: 20px;
@@ -524,20 +556,31 @@ a:hover {
 
 #the-team .exec div {
   padding: 50px;
+  margin: 20px;
 }
 
 #the-team .exec #profile {
+  padding: 20px;
   text-align: center;
-  padding-right: 0;
+  width: 200px;
+  height: 200px;
+  vertical-align: middle;
+  overflow: hidden;
+  border-radius: 100%;
 }
 
-#the-team .exec #profile div {
-  overflow: hidden;
-  max-width: 200px;
-  max-height: 200px;
-  border-radius: 100%;
-  padding: 0;
-  margin: 0;
+#the-team .exec #profile img {
+  position: relative;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  height: 120%;
+  width: auto;
+}
+
+#the-team .exec #exec-text {
+  width: 60%;
 }
 
 #the-team .exec img {
@@ -557,17 +600,50 @@ a:hover {
   background-color: #eba3b1;
 }
 
+#showcase h1 {
+  padding: 50px;
+  font-size: 14vw;
+  margin: 0;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+}
+
 #showcase #showcase-text {
+  -ms-flex-item-align: start;
+      align-self: flex-start;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   padding: 100px;
-  width: 40%;
-  text-align: right;
+  width: 95%;
+  text-align: left;
   position: relative;
   color: #363636;
 }
 
-#showcase #showcase-img {
-  width: 60%;
-  padding: 100px;
+#showcase #showcase-img1 {
+  width: 45%;
+  padding: 0px;
+  position: relative;
+  margin-right: 20px;
+}
+
+#showcase #showcase-img2 {
+  width: 45%;
+  padding: 0px;
+  position: relative;
+  margin-left: 20px;
+}
+
+#showcase #showcase-date {
+  color: #e68e9f;
+}
+
+#showcase #showcase-date h1 {
+  padding: 50px 100px;
 }
 
 #showcase img {
@@ -585,6 +661,8 @@ a:hover {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
 }
 
 #donate-icons img {
@@ -615,12 +693,110 @@ a:hover {
   padding: 50px;
   margin: 20px;
   border-radius: 100%;
-  height: 155px;
-  width: 155px;
+  height: 150px;
+  width: 150px;
   background-color: #363636;
 }
 
 #donate-icons .description h1 {
   font-size: 16px;
+  letter-spacing: 1px;
+}
+
+#donate-icons .description p {
+  font-size: 14px;
+}
+
+@media screen and (max-width: 600px) {
+  body {
+    overflow-x: hidden;
+  }
+  .home-div {
+    margin: 50px 0;
+    text-align: center;
+  }
+  #welcome .yellow, #welcome .pink {
+    background-color: rgba(0, 0, 0, 0);
+  }
+  #welcome .blue {
+    background-color: rgba(0, 0, 0, 0.25);
+  }
+  #why-care, #what-can-you-do, #statistic, #mission {
+    padding: 50px;
+  }
+  #statistic {
+    width: -webkit-fill-available;
+    height: -webkit-fit-content;
+    height: -moz-fit-content;
+    height: fit-content;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  #statistic #statistic-num h1 {
+    font-size: 72px;
+  }
+  #the-truth h2 {
+    margin: 50px;
+  }
+  #why-care div {
+    width: -webkit-fill-available;
+    padding: 0;
+  }
+  #get-involved-now, #insta {
+    height: 200px;
+    margin-bottom: 200px;
+  }
+  #get-involved-now h1, #insta h1 {
+    top: 0%;
+    -webkit-transform: none;
+            transform: none;
+  }
+  #get-involved-now #get-involved-btn, #insta #get-involved-btn {
+    font-size: 24px;
+    border-width: 5px;
+  }
+  .text {
+    margin: 50px;
+  }
+  .text h2 {
+    font-size: 40px;
+  }
+  #mission {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+  #mission #mission-text, #mission #mission-img {
+    padding: 0;
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+  }
+  #the-team {
+    margin: 20px;
+  }
+  #the-team h2 {
+    text-align: center;
+  }
+  #the-team #exec-text {
+    padding: 0;
+  }
+  #the-team #exec-text h3 {
+    font-size: 20px;
+  }
+  #showcase {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    padding: 50px;
+  }
+  #showcase #showcase-text, #showcase #showcase-img {
+    padding: 0;
+  }
+  #showcase #showcase-img1, #showcase #showcase-img2 {
+    width: 100%;
+    margin: 0;
+  }
 }
 /*# sourceMappingURL=styles.css.map */
