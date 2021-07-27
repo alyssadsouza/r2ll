@@ -312,7 +312,7 @@ a:hover {
 }
 
 .home-div {
-  margin: 100px 0;
+  margin: 200px 0;
   text-align: center;
 }
 
@@ -381,7 +381,6 @@ a:hover {
   position: relative;
   text-align: center;
   padding: 0 100px;
-  margin: 100px 0;
   background-color: transparent;
   -webkit-box-shadow: none;
           box-shadow: none;
@@ -446,7 +445,7 @@ a:hover {
 }
 
 #the-truth {
-  padding: 50px;
+  padding: 200px;
   background: linear-gradient(45deg, #8094dd, #f41676);
   position: relative;
 }
@@ -482,7 +481,7 @@ a:hover {
 }
 
 #why-care {
-  padding: 100px 200px;
+  padding: 0px 200px;
 }
 
 #why-care div {
@@ -739,7 +738,7 @@ a:hover {
     font-size: 72px;
   }
   #the-truth h2 {
-    margin: 50px;
+    margin: 0px;
   }
   #why-care div {
     width: -webkit-fill-available;
