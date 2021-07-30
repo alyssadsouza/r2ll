@@ -103,6 +103,32 @@
   }
 }
 
+@-webkit-keyframes slide-up {
+  from {
+    opacity: 0%;
+    -webkit-transform: translate(0, 50px);
+            transform: translate(0, 50px);
+  }
+  to {
+    opacity: 100%;
+    -webkit-transform: translate(0px);
+            transform: translate(0px);
+  }
+}
+
+@keyframes slide-up {
+  from {
+    opacity: 0%;
+    -webkit-transform: translate(0, 50px);
+            transform: translate(0, 50px);
+  }
+  to {
+    opacity: 100%;
+    -webkit-transform: translate(0px);
+            transform: translate(0px);
+  }
+}
+
 @-webkit-keyframes left-next {
   0% {
     -webkit-transform: none;
@@ -324,6 +350,11 @@
           animation: fade 1s;
 }
 
+.slide-up {
+  -webkit-animation: slide-up 1s;
+          animation: slide-up 1s;
+}
+
 body::-webkit-scrollbar {
   height: 0px;
   width: 8px;
@@ -534,6 +565,7 @@ a:hover {
   /* change the direction of the change here */
   color: #fff;
   text-decoration: none;
+  cursor: pointer;
 }
 
 .banner {
@@ -541,8 +573,6 @@ a:hover {
   height: 400px;
   position: relative;
   overflow: hidden;
-  -webkit-animation: fade 0.5s;
-          animation: fade 0.5s;
 }
 
 .banner .banner-img {
@@ -657,7 +687,12 @@ a:hover {
           animation: block3 3s;
 }
 
+#statistic.slide-up {
+  opacity: 100%;
+}
+
 #statistic {
+  opacity: 0%;
   position: relative;
   text-align: center;
   padding: 0 100px;
@@ -712,7 +747,12 @@ a:hover {
   font-weight: bold;
 }
 
+.stat.slide-up {
+  opacity: 100%;
+}
+
 .stat {
+  opacity: 0%;
   background-color: #f3f3f3;
   color: #363636;
   max-width: 250px;
@@ -760,8 +800,13 @@ a:hover {
   margin: 0;
 }
 
+#why-care.slide-up {
+  opacity: 100%;
+}
+
 #why-care {
   padding: 0px 200px;
+  opacity: 0%;
 }
 
 #why-care div {
@@ -774,6 +819,19 @@ a:hover {
 
 #what-can-you-do {
   margin-bottom: 200px;
+  opacity: 0%;
+}
+
+#what-can-you-do.slide-up {
+  opacity: 100%;
+}
+
+#get-involved-now {
+  opacity: 0%;
+}
+
+#get-involved-now.fade {
+  opacity: 100%;
 }
 
 #get-involved-btn {
@@ -876,9 +934,9 @@ a:hover {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
   text-align: left;
   background-color: rgba(255, 255, 255, 0.08);
   margin-bottom: 20px;
@@ -886,15 +944,16 @@ a:hover {
 }
 
 #the-team .exec div {
-  padding: 50px;
+  padding: 10px 50px;
   margin: 20px;
 }
 
 #the-team .exec #profile {
   padding: 20px;
+  margin-left: 50px;
   text-align: center;
-  width: 200px;
-  height: 200px;
+  width: 150px;
+  height: 150px;
   vertical-align: middle;
   overflow: hidden;
   border-radius: 100%;
@@ -906,7 +965,7 @@ a:hover {
   top: 50%;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
-  height: 120%;
+  height: 130%;
   width: auto;
 }
 
