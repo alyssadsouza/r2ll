@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", () => {
     .addTo(controller);
 
     var theTruth = new ScrollMagic.Scene({
-        triggerElement: "#the-truth",
+        triggerElement: "#stat-container",
         reverse:false
     })
     .setClassToggle(".stat", "slide-up")
