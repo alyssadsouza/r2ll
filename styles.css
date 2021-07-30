@@ -1157,6 +1157,9 @@ a:hover {
         -ms-flex-pack: justify;
             justify-content: space-between;
   }
+  .dropdown-content {
+    min-width: 0px;
+  }
   .menu {
     display: block;
   }

@@ -908,6 +908,10 @@ a:hover {
         display:flex;
         justify-content: space-between;
     }
+
+    .dropdown-content {
+        min-width: 0px;
+    }
     
     .menu {
         display:block;
