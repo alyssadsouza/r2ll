@@ -185,6 +185,10 @@ h3 {
     align-items: center;
 }
 
+.menu {
+    display:none;
+}
+
 header, footer {
     width:100%;
     height:fit-content;
@@ -207,6 +211,11 @@ header, footer {
             letter-spacing: 3px;
             font-size:14px;
             text-transform: uppercase;
+        }
+
+        #exit {
+            width:20px;
+            margin-top:30px;
         }
     }
 }
@@ -877,6 +886,14 @@ a:hover {
     }
 }
 
+.visible {
+    display:block;
+}
+
+.hidden {
+    display:none;
+}
+
 @media screen and (max-width:600px) {
 
     body {
@@ -885,6 +902,15 @@ a:hover {
 
     header nav {
         display:none;
+    }
+
+    header {
+        display:flex;
+        justify-content: space-between;
+    }
+    
+    .menu {
+        display:block;
     }
 
     footer nav ul {

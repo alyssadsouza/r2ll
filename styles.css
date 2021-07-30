@@ -381,6 +381,10 @@ h3 {
           align-items: center;
 }
 
+.menu {
+  display: none;
+}
+
 header, footer {
   width: 100%;
   height: -webkit-fit-content;
@@ -408,6 +412,11 @@ header nav li, footer nav li {
   letter-spacing: 3px;
   font-size: 14px;
   text-transform: uppercase;
+}
+
+header nav #exit, footer nav #exit {
+  width: 20px;
+  margin-top: 30px;
 }
 
 .dropdown-content {
@@ -1125,12 +1134,31 @@ a:hover {
   }
 }
 
+.visible {
+  display: block;
+}
+
+.hidden {
+  display: none;
+}
+
 @media screen and (max-width: 600px) {
   body {
     overflow-x: hidden;
   }
   header nav {
     display: none;
+  }
+  header {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  .menu {
+    display: block;
   }
   footer nav ul {
     -webkit-padding-start: 0;
