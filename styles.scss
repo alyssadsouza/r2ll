@@ -28,6 +28,99 @@ $beige: #f0e6d8;
     from {opacity:0%} to{opacity:100%}
 }
 
+@keyframes slide {
+    from {height:0%} to {height:fit-content}
+}
+
+@keyframes left-next {
+    0% {
+        transform:none;
+    }
+    75% {
+        transform: rotateZ(28deg);
+        transform-origin: 237.5% 375.75%;
+    }
+    100% {
+        transform: rotateZ(28deg);
+        transform-origin: 237.5% 375.75%;
+    }         
+}
+
+@keyframes middle-next {
+    0% {
+        transform:none;
+    }
+    75% {
+        transform: rotateZ(32deg);
+        transform-origin: 50% 380%;
+    }     
+    100% {
+        transform: rotateZ(32deg);
+        transform-origin: 50% 380%;
+    }    
+}
+
+@keyframes right-next {
+    0% {
+        transform:none;
+    }
+    75% {
+        transform: rotateZ(42.5deg);
+        transform-origin: -8.5% -75%;
+        width:300px;
+        height:300px;
+        opacity:100%;
+    } 
+    100% {
+        transform: rotateZ(42.5deg);
+        transform-origin: -8.5% -75%;
+        width:300px;
+        height:300px;
+        opacity:100%;
+    }         
+}
+
+@keyframes front-next {
+    0% {
+        transform: none;
+        opacity:100%;
+    }
+    75% {
+        transform: rotateZ(30deg);
+        transform-origin: 152% -277%;
+        width:200px;
+        height:200px;
+        opacity:50%;
+    }
+    100% {
+        transform: rotateZ(30deg);
+        transform-origin: 152% -277%;
+        width:200px;
+        height:200px;
+        opacity:50%;
+    }
+}
+
+@keyframes hide {
+    from {opacity:100%} to {opacity:0%}
+}
+
+.left-next {
+    animation: left-next 1s linear;
+}
+
+.middle-next {
+    animation: middle-next 1s linear;
+}
+
+.right-next {
+    animation: right-next 1s linear;
+}
+
+.front-next {
+    animation: front-next 1s linear;
+}
+
 .fade {
     animation: fade 1s;
 }
@@ -120,9 +213,14 @@ header, footer {
 
 .dropdown-content {
     visibility: hidden;
-    opacity:0%;
+
+    max-height: 0;
+    transition: max-height 0.5s ease-out;
+    overflow: hidden;
+
     position: absolute;
-    background-color:lighten($pink, 10%);
+    // background-color:lighten($pink, 10%);
+    background: linear-gradient(45deg, $blue, $pink);
     min-width: 200px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     padding: 0 15px 0 0;
@@ -135,7 +233,7 @@ header, footer {
     }
 
     a:hover {
-        color: $pink;
+        color: white;
     }
 
     li {
@@ -144,9 +242,10 @@ header, footer {
 } 
 .dropdown:hover {
     .dropdown-content {
-        transition: opacity 0.25s;
         visibility: visible;
-        opacity:100%;
+        
+        max-height: 500px;
+        transition: max-height 0.5s ease-in;
     }
 }
 
@@ -188,17 +287,41 @@ a:hover {
 }
 
 .btn {
-    padding:10px;
-    margin:10px;
     border: 2px solid white;
     border-radius: 20px;
-    font: 18px "Staatliches", cursive;
-    letter-spacing: 2px;
+    padding:8px;
+    margin:8px;
+    font-family: "Staatliches", cursive;
 }
 
 .btn:hover {
     border-color: $pink;
 }
+
+.btn-grad {background-image: linear-gradient(to right, $pink 0%, $blue  51%, $pink  100%)}
+    .btn-grad {
+       margin-top: 10px;
+       padding: 15px 45px;
+       position:relative;
+       left:50%;
+       transform: translate(-50%);
+       text-align: center;
+       text-transform: uppercase;
+       font: 25px "Staatliches", cursive;
+       transition: 0.5s;
+       background-size: 200% auto;
+       color: $magenta;            
+       //box-shadow: 0 0 20px #eee;
+       border-radius: 10px;
+       display: block;
+       border:none;
+     }
+
+     .btn-grad:hover {
+       background-position: right center; /* change the direction of the change here */
+       color: #fff;
+       text-decoration: none;
+     }
 
 .banner {
     width:100%;
@@ -209,7 +332,7 @@ a:hover {
 
     .banner-img {
         background-image: url("images/header.jpg");
-        opacity:50%;
+        opacity:30%;
         width: -webkit-fill-available;
         height: -webkit-fill-available;
     }
@@ -221,6 +344,7 @@ a:hover {
         top:50%;
         transform: translate(0,-50%);
         z-index: 1;
+        margin:0;
     }
 }
 
@@ -242,8 +366,8 @@ a:hover {
 }
 
 .hover:hover {
-    box-shadow: 5px 10px darken($magenta,10%);
-    transform: translate(0,-5px);
+    box-shadow: 5px 10px $magenta;
+    transform: translate(0,-15px);
     transition: box-shadow 0.5s, transform 0.5s;
 }
 
@@ -368,7 +492,7 @@ a:hover {
 
 #the-truth {
     padding:200px;
-    background: linear-gradient(45deg, $blue, lighten($magenta, 10%));
+    background: linear-gradient(45deg, darken($blue, 10%), lighten($magenta, 10%));
     position: relative;
     h2 {
         text-align: center;
@@ -414,14 +538,18 @@ a:hover {
 }
 
 #get-involved-btn {
-    padding:10px;
-    border: 10px solid white;
+    padding:10px 20px;
+    width:fit-content;
+    color: $magenta;
+    font-size: 72px;
+    // border: 10px solid $magenta;
+    border:none;
+    border-radius:0px;
 }
 
 #get-involved-btn:hover {
-    transition: background-color 0.5s;
-    background-color: darken($blue, 5%);
-    color: white;
+    color:white;
+    // border-color: white;
 }
 
 // ---------------------------------
@@ -454,6 +582,54 @@ a:hover {
 
 #goals {
     text-align: center;
+        
+    
+    
+    #wheel {
+        margin-top: 100px;
+        max-height: 400px;
+
+        .goal {
+            background-color: $white;
+            color: $black;
+            border-radius: 100%;
+            margin:50px;
+        }
+
+        .background, .foreground {
+            display:flex;
+            justify-content: center;
+        }
+
+        .background {
+            .goal {
+                width:200px;
+                height:200px;
+                opacity:50%;
+            }
+        }
+
+        .foreground {
+            position:relative;
+            left:50%;
+            top:70%;
+            transform: translate(-50%, -70%);
+            .goal {
+                width:300px;
+                height:300px;
+            }
+        }
+
+        #middle {
+            position:relative;
+            top:-100px;
+        }
+    
+    }
+}
+
+#mobile-goals {
+    display:none;
 }
 
 #the-team {
@@ -627,10 +803,92 @@ a:hover {
 
 // responsive:
 
+@media screen and (max-width:1200px) {
+
+    #goals {
+        #wheel {
+            .background .goal {
+                width:175px;
+                height:175px;
+            }
+
+            .foreground .goal {
+                width:250px;
+                height:250px;
+            }
+        }
+    }
+
+    @keyframes right-next {
+        0% {
+            transform:none;
+        }
+        75% {
+            transform: rotateZ(42.5deg);
+            transform-origin: -8.5% -75%;
+            width:250px;
+            height:250px;
+            opacity:100%;
+        } 
+        100% {
+            transform: rotateZ(42.5deg);
+            transform-origin: -8.5% -75%;
+            width:250px;
+            height:250px;
+            opacity:100%;
+        }         
+    }
+}
+
+@media screen and (max-width:1000px) {
+    // ADD RESPONSIVE DESIGN FOR GOALS HERE
+    #goals {
+        display:none;
+    }
+
+    #mobile-goals {
+        display:block;
+        text-align: center;
+        
+        .hide {
+            animation: hide 0.5s;
+            // visibility: hidden;
+            display:none;
+        }
+
+        #mobile-wheel {
+            display:flex;
+            align-items: center;
+            justify-content: center;
+
+            .goal {
+                background-color: $white;
+                color: $black;
+                border-radius: 100%;
+                margin:10px;
+                width:250px;
+                height:250px;
+            }
+
+            #prev-mobile, #next-mobile {
+                font-size: 36px;
+            }
+        }
+    }
+}
+
 @media screen and (max-width:600px) {
 
     body {
         overflow-x:hidden;
+    }
+
+    header nav {
+        display:none;
+    }
+
+    footer nav ul {
+        padding-inline-start: 0;
     }
 
     .home-div {
@@ -639,6 +897,8 @@ a:hover {
     }
 
     #welcome {
+        margin-top:0;
+        
         .yellow, .pink{
             background-color: rgba(0,0,0,0);
         }
@@ -663,6 +923,7 @@ a:hover {
     }
 
     #the-truth {
+        padding:50px;
         h2 {
             margin:0px;
         }
@@ -673,14 +934,13 @@ a:hover {
         padding:0;
     }
 
+    #what-can-you-do {
+        margin:0px;
+    }
+
     #get-involved-now, #insta {
         height:200px;
         margin-bottom: 200px;
-
-        h1 {
-            top:0%;
-            transform:none;
-        }
 
         #get-involved-btn {
             font-size: 24px;

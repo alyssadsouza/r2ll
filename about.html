@@ -9,6 +9,7 @@
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Staatliches&display=swap" rel="stylesheet">
+        <script src="r2ll.js"></script>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
 
@@ -77,6 +78,45 @@
 
         <div id="goals" class="text">
             <h2>Our Goals</h2>
+            <div id="wheel">
+                <div class="background">
+                    <div class="goal" id="left">
+                        <h1>4</h1>
+                    </div>
+                    <div class="goal" id="middle">
+                        <h1>3</h1>
+                    </div>
+                    <div class="goal" id="right">
+                        <h1>2</h1>
+                    </div>
+                </div>
+                <div class="foreground">
+                    <div class="goal" id="front">
+                        <h1>1</h1>
+                    </div>  
+                </div>
+            </div>
+            <button id="next" class="btn-grad">Next</button>
+        </div>
+
+        <div id="mobile-goals" class="text">
+            <h2>Our Goals</h2>
+            <div id="mobile-wheel" data-pres="one" data-prev="four" data-next="two">
+                <div><a id="prev-mobile" class="goal-btn">◀</a></div>
+                <div class="goal" id="one" data-next="two" data-prev="four">
+                    <h1>1</h1>
+                </div>
+                <div class="goal hide" id="two" data-next="three" data-prev="one">
+                    <h1>2</h1>
+                </div>
+                <div class="goal hide" id="three" data-next="four" data-prev="two">
+                    <h1>3</h1>
+                </div>
+                <div class="goal hide" id="four" data-next="one" data-prev="three">
+                    <h1>4</h1>
+                </div>
+                <div><a id="next-mobile" class="goal-btn">▶</a></div>
+            </div>
         </div>
 
         <div id="the-team"  class="text">
